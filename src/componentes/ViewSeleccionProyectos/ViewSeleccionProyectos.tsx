@@ -8,7 +8,7 @@ import { mapDispatchToProps, mapStateToProps } from '../../redux/map/mapeo'
 import { IProps } from '../../redux/types/global'
 
 const ViewSeleccionProyectos = (
-   { seleccionado, setProyectoSeleccionado, addNewProject, proyectos, setRuta,removeProject }: IProps) => {
+   { seleccionado, setProyectoSeleccionado, addNewProject, proyectos, setRuta, removeProject }: IProps) => {
 
    const [ignore, forceUpdate] = useReducer(x => x + 1, 0);
 
@@ -32,7 +32,7 @@ const ViewSeleccionProyectos = (
    const handlerDeleteProject = () => {
       if (seleccionado.proyecto === -1) alert('debes seleccionar un quizz')
       else removeProject(seleccionado.proyecto)
-      
+
    };
 
    return (
@@ -55,7 +55,6 @@ const ViewSeleccionProyectos = (
             <DivBotonera>
                <Button onClick={handlerEditarQuiz}
                >Editar Quiz</Button>
-               <Button >Probar Quiz</Button>
                <Button onClick={handlerAddNewProject} >Add Quiz</Button>
                <Button onClick={handlerDeleteProject}>Borrar Quiz</Button>
             </DivBotonera>
